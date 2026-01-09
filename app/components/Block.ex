@@ -20,15 +20,15 @@ defmodule HologramSkeleton.Components.Block do
         </button>
       {/if}
 
-      <HologramSkeleton.Components.Accordion2 cid="nested-with-event-passing" title="Accordion Example 3" parent_cid={@cid}>
-        <form $submit="form_submitted" class="space-y-4">
+      <HologramSkeleton.Components.Accordion cid="nested" title="Accordion Example 3">
+        <form $submit={action: :form_submitted, target: @cid} class="space-y-4">
           <div>
             <label for="age" class="block text-sm font-medium text-gray-700">Age</label>
             <input type="text" name="age" id="age" required class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm p-2" />
           </div>
           <button type="submit" class="px-4 py-2 bg-green-600 text-white rounded-md hover:bg-green-700">Submit</button>
         </form>
-      </HologramSkeleton.Components.Accordion2>
+      </HologramSkeleton.Components.Accordion>
     </div>
     """
   end

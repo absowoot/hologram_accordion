@@ -11,12 +11,10 @@ defmodule HologramSkeleton.Components.Accordion2 do
 
   prop :title_class, :string, default: "text-lg font-medium text-gray-800"
   prop :content_class, :string, default: "p-4"
-  prop :parent_cid, :string, default: "page"
 
   def init(props, component, _server) do
     component
     |> put_state(:collapsed, props.collapsed)
-    |> put_state(:parent_cid, props.parent_cid)
   end
 
   def template do
@@ -51,12 +49,4 @@ defmodule HologramSkeleton.Components.Accordion2 do
     component
     |> put_state(:collapsed, new_collapsed)
   end
-
-
-  def action(action, params, component) do
-    target = component.state.parent_cid
-
-    put_action(component, name: action, target: target, params: params)
-  end
-
 end

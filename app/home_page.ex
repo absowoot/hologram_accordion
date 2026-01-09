@@ -23,7 +23,7 @@ defmodule HologramSkeleton.HomePage do
         </button>
       {/if}
 
-      <HologramSkeleton.Components.Accordion cid="no-event-passing" title="Accordion Example 1">
+      <HologramSkeleton.Components.Accordion cid="no-target" title="Accordion Example 1">
         <p>This is an example of an accordion component without event passing. Submit the form and check the console.</p>
         <form $submit="form_submitted" class="space-y-4">
           <div>
@@ -34,16 +34,16 @@ defmodule HologramSkeleton.HomePage do
         </form>
       </HologramSkeleton.Components.Accordion>
 
-      <HologramSkeleton.Components.Accordion2 cid="with-event-passing" title="Accordion Example 2">
+      <HologramSkeleton.Components.Accordion cid="with-target" title="Accordion Example 2">
         <p>This is an example of an accordion component with event passing.</p>
-        <form $submit="form_submitted" class="space-y-4">
+        <form $submit={action: :form_submitted, target: "page"} class="space-y-4">
           <div>
             <label for="name" class="block text-sm font-medium text-gray-700">Name</label>
             <input type="text" name="name" id="name" required class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm p-2" />
           </div>
           <button type="submit" class="px-4 py-2 bg-green-600 text-white rounded-md hover:bg-green-700">Submit</button>
         </form>
-      </HologramSkeleton.Components.Accordion2>
+      </HologramSkeleton.Components.Accordion>
 
       <HologramSkeleton.Components.Block cid="block-with-nested-accordion">
         <p>This is content inside a Block component.</p>
