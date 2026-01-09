@@ -1,6 +1,6 @@
 defmodule HologramSkeleton.DefaultLayout do
   use Hologram.Component
-  
+
   def template do
     ~HOLO"""
     <!DOCTYPE html>
@@ -8,6 +8,7 @@ defmodule HologramSkeleton.DefaultLayout do
       <head>
         <title>Hologram Skeleton</title>
         <Hologram.UI.Runtime />
+        <link rel="stylesheet" href={asset_path("assets/app.css")} />
       </head>
       <body>
         <slot />
