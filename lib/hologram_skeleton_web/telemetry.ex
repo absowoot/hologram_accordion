@@ -53,23 +53,23 @@ defmodule HologramSkeletonWeb.Telemetry do
       ),
 
       # Database Metrics
-      summary("hologram_accordion.repo.query.total_time",
+      summary("hologram_skeleton.repo.query.total_time",
         unit: {:native, :millisecond},
         description: "The sum of the other measurements"
       ),
-      summary("hologram_accordion.repo.query.decode_time",
+      summary("hologram_skeleton.repo.query.decode_time",
         unit: {:native, :millisecond},
         description: "The time spent decoding the data received from the database"
       ),
-      summary("hologram_accordion.repo.query.query_time",
+      summary("hologram_skeleton.repo.query.query_time",
         unit: {:native, :millisecond},
         description: "The time spent executing the query"
       ),
-      summary("hologram_accordion.repo.query.queue_time",
+      summary("hologram_skeleton.repo.query.queue_time",
         unit: {:native, :millisecond},
         description: "The time spent waiting for a database connection"
       ),
-      summary("hologram_accordion.repo.query.idle_time",
+      summary("hologram_skeleton.repo.query.idle_time",
         unit: {:native, :millisecond},
         description:
           "The time the connection spent waiting before being checked out for the query"

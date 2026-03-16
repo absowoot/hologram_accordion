@@ -21,5 +21,5 @@ defmodule HologramSkeletonWeb.Gettext do
 
   See the [Gettext Docs](https://hexdocs.pm/gettext) for detailed usage.
   """
-  use Gettext.Backend, otp_app: :hologram_accordion
+  use Gettext.Backend, otp_app: :hologram_skeleton
 end

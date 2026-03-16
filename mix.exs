@@ -3,7 +3,7 @@ defmodule HologramSkeleton.MixProject do
 
   def project do
     [
-      app: :hologram_accordion,
+      app: :hologram_skeleton,
       version: "0.1.0",
       elixir: "~> 1.14",
       elixirc_paths: elixirc_paths(Mix.env()),
@@ -59,7 +59,7 @@ defmodule HologramSkeleton.MixProject do
       {:jason, "~> 1.2"},
       {:dns_cluster, "~> 0.1.1"},
       {:bandit, "~> 1.5"},
-      {:hologram, "~> 0.6"}
+      {:hologram, "~> 0.8"}
     ]
   end
 
@@ -77,10 +77,10 @@ defmodule HologramSkeleton.MixProject do
       "ecto.reset": ["ecto.drop", "ecto.setup"],
       test: ["ecto.create --quiet", "ecto.migrate --quiet", "test"],
       "assets.setup": ["tailwind.install --if-missing", "esbuild.install --if-missing"],
-      "assets.build": ["tailwind hologram_accordion", "esbuild hologram_accordion"],
+      "assets.build": ["tailwind hologram_skeleton", "esbuild hologram_skeleton"],
       "assets.deploy": [
-        "tailwind hologram_accordion --minify",
-        "esbuild hologram_accordion --minify",
+        "tailwind hologram_skeleton --minify",
+        "esbuild hologram_skeleton --minify",
         "phx.digest"
       ]
     ]

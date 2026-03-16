@@ -8,8 +8,8 @@ const path = require("path");
 module.exports = {
     content: [
         "./js/**/*.js",
-        "../lib/hologram_accordion_web.ex",
-        "../lib/hologram_accordion_web/**/*.*ex",
+        "../lib/hologram_skeleton_web.ex",
+        "../lib/hologram_skeleton_web/**/*.*ex",
     ],
     theme: {
         extend: {

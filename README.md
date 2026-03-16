@@ -15,8 +15,8 @@ To start your Hologram application:
 
 1. Clone this repository
    ```bash
-   git clone https://github.com/bartblast/hologram_accordion.git
-   cd hologram_accordion
+   git clone https://github.com/bartblast/hologram_skeleton.git
+   cd hologram_skeleton
    ```
 
 2. Install dependencies
@@ -37,7 +37,7 @@ Hologram follows a convention of placing page and component files in the `app` d
 
 ## Database Configuration
 
-To enable database functionality, uncomment the `HologramSkeleton.Repo` line in `lib/hologram_accordion/application.ex`:
+To enable database functionality, uncomment the `HologramSkeleton.Repo` line in `lib/hologram_skeleton/application.ex`:
 
 ```elixir
 children = [

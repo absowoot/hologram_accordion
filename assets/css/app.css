@@ -2,5 +2,6 @@
 @source "../css";
 @source "../js";
 @source "../../app";
+@import "@splidejs/splide/css";
 
 /* This file is for your main application CSS */
