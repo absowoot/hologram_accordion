@@ -10,7 +10,8 @@ defmodule HologramSkeleton.MixProject do
       start_permanent: Mix.env() == :prod,
       aliases: aliases(),
       deps: deps(),
-      compilers: Mix.compilers() ++ [:hologram]
+      compilers: Mix.compilers() ++ [:hologram],
+      consolidate_protocols: Mix.env() != :dev
     ]
   end
 
@@ -33,6 +34,8 @@ defmodule HologramSkeleton.MixProject do
   # Type `mix help deps` for examples and options.
   defp deps do
     [
+      {:sourceror, "~> 1.8", only: [:dev, :test]},
+      {:igniter, "~> 0.6", only: [:dev, :test]},
       {:phoenix, "~> 1.7.20"},
       {:phoenix_ecto, "~> 4.5"},
       {:ecto_sql, "~> 3.10"},
@@ -59,7 +62,9 @@ defmodule HologramSkeleton.MixProject do
       {:jason, "~> 1.2"},
       {:dns_cluster, "~> 0.1.1"},
       {:bandit, "~> 1.5"},
-      {:hologram, "~> 0.6"}
+      {:hologram, "0.8.2"},
+      {:ash_postgres, "~> 2.0"},
+      {:ash, "~> 3.0"}
     ]
   end
 
@@ -73,7 +78,7 @@ defmodule HologramSkeleton.MixProject do
     [
       # setup: ["deps.get", "ecto.setup", "assets.setup", "assets.build"],
       setup: ["deps.get", "assets.setup", "assets.build"],
-      "ecto.setup": ["ecto.create", "ecto.migrate", "run priv/repo/seeds.exs"],
+      "ecto.setup": ["ecto.create", "ash.migrate", "run priv/repo/seeds.exs"],
       "ecto.reset": ["ecto.drop", "ecto.setup"],
       test: ["ecto.create --quiet", "ecto.migrate --quiet", "test"],
       "assets.setup": ["tailwind.install --if-missing", "esbuild.install --if-missing"],

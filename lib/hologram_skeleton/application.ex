@@ -17,7 +17,8 @@ defmodule HologramSkeleton.Application do
       # Start a worker by calling: HologramSkeleton.Worker.start_link(arg)
       # {HologramSkeleton.Worker, arg},
       # Start to serve requests, typically the last entry
-      HologramSkeletonWeb.Endpoint
+      HologramSkeletonWeb.Endpoint,
+      HologramSkeleton.Repo
     ]
 
     # See https://hexdocs.pm/elixir/Supervisor.html
